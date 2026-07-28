@@ -38,7 +38,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-white/5 bg-[#08060d]/80 backdrop-blur-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#top" className="text-lg font-extrabold tracking-tight text-white">
-          Время Быть <span className="bg-gradient-to-r from-fuchsia-400 to-violet-400 bg-clip-text text-transparent">Ярче</span>
+          ВремяБыть<span className="bg-gradient-to-r from-fuchsia-400 to-violet-400 bg-clip-text text-transparent">Ярче</span>
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -256,7 +256,7 @@ function Offer() {
                   <td className="px-5 py-4 text-right text-xl font-black text-white sm:px-6">≈ 800 000 ₽</td>
                 </tr>
                 <tr className="border-t border-fuchsia-500/30 bg-gradient-to-r from-fuchsia-500/10 to-violet-500/10">
-                  <td className="px-5 py-4 font-bold text-white sm:px-6">Цена курса «Время Быть Ярче»</td>
+                  <td className="px-5 py-4 font-bold text-white sm:px-6">Цена курса «ВремяБытьЯрче»</td>
                   <td className="px-5 py-4 text-right text-xl font-black text-white sm:px-6">от 36 690 ₽</td>
                 </tr>
               </tbody>
@@ -594,7 +594,7 @@ function Packages() {
 }
 
 function About() {
-  const bullets = ['15 лет в бизнесе, 10 лет в формате «Время Быть Ярче»', '5000+ проведённых мероприятий', '300 000+ детей — участников программ']
+  const bullets = ['20 лет на рынке детских мероприятий', '5000+ проведённых мероприятий', '300 000+ детей — участников программ']
   return (
     <section id="about" className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
       <Blob className="-left-24 top-1/2 h-80 w-80 -translate-y-1/2 bg-fuchsia-700/20" />
@@ -602,22 +602,23 @@ function About() {
         <div className="mx-auto w-full max-w-sm">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-purple-900/40 via-[#150e24] to-fuchsia-900/20">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 text-2xl font-black tracking-tight text-white/30">
-                ВБЯ
+              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 text-4xl font-black text-white/30">
+                А
               </div>
             </div>
             <span className="absolute bottom-4 left-4 rounded-full bg-black/50 px-3 py-1 text-xs text-gray-300 backdrop-blur">
-              [ФОТО / ЛОГОТИП КОМПАНИИ]
+              [ФОТО АНАСТАСИИ]
             </span>
           </div>
         </div>
 
         <div>
-          <SectionEyebrow>О компании</SectionEyebrow>
+          <SectionEyebrow>О создателе</SectionEyebrow>
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">О создателе</h2>
           <p className="mt-4 max-w-xl text-gray-400">
-            Компания «Атлансис». Основатель бренда «Время Быть Ярче». 15 лет в бизнесе, 10 лет именно с этим
-            форматом мероприятий — методология выстроена и проверена на практике, а не в теории.
+            Анастасия [ФАМИЛИЯ] — основатель бренда «ВремяБытьЯрче». За два десятилетия в event-индустрии
+            выстроила систему, которая позволяет партнёрам в любом городе повторить результат без долгих
+            экспериментов.
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -694,20 +695,39 @@ function FAQ() {
   )
 }
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mrenjrgr'
+
 function CTAForm() {
   const [form, setForm] = useState({ name: '', phone: '', city: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setForm((f) => ({ ...f, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name || !form.phone || !form.city) return
-    // В проде здесь будет реальная отправка на бэкенд
-    setSubmitted(true)
+
+    setSubmitting(true)
+    setError(false)
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, phone: form.phone, city: form.city }),
+      })
+      if (!res.ok) throw new Error('Formspree request failed')
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -717,7 +737,7 @@ function CTAForm() {
       <div className="relative mx-auto max-w-3xl">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-8 sm:p-12">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Оставьте заявку на курс «Время Быть Ярче»</h2>
+            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Оставьте заявку на курс «ВремяБытьЯрче»</h2>
             <p className="mt-3 text-gray-400">Куратор свяжется с вами и расскажет, как запустить курс в вашем городе.</p>
           </div>
 
@@ -757,8 +777,13 @@ function CTAForm() {
                 required
                 className="rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-sm text-white placeholder:text-gray-500 outline-none focus:border-fuchsia-500/60 sm:col-span-2"
               />
-              <GradientButton type="submit" className="w-full py-4 text-base sm:col-span-2">
-                Отправить заявку
+              {error && (
+                <p className="text-center text-sm font-semibold text-red-400 sm:col-span-2">
+                  Не удалось отправить заявку. Попробуйте ещё раз или напишите нам напрямую.
+                </p>
+              )}
+              <GradientButton type="submit" disabled={submitting} className="w-full py-4 text-base sm:col-span-2 disabled:opacity-60">
+                {submitting ? 'Отправляем…' : 'Отправить заявку'}
               </GradientButton>
               <p className="text-center text-xs text-gray-600 sm:col-span-2">
                 Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
@@ -776,14 +801,14 @@ function Footer() {
     <footer className="border-t border-white/5 px-5 py-10 sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
         <div>
-          <div className="text-base font-extrabold text-white">Время Быть Ярче</div>
+          <div className="text-base font-extrabold text-white">ВремяБытьЯрче</div>
           <p className="mt-1 text-xs text-gray-500">Курс для организаторов детских мероприятий</p>
         </div>
 
         <div className="flex flex-col gap-1 text-xs text-gray-500 sm:items-end">
           <span>Телефон: [ТЕКСТ]</span>
           <span>Email: [ТЕКСТ]</span>
-          <span>© {new Date().getFullYear()} «Время Быть Ярче». Все права защищены.</span>
+          <span>© {new Date().getFullYear()} «ВремяБытьЯрче». Все права защищены.</span>
         </div>
       </div>
     </footer>
