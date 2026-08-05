@@ -425,14 +425,11 @@ function About() {
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[380px_1fr]">
         <div className="mx-auto w-full max-w-sm">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-purple-900/40 via-[#150e24] to-fuchsia-900/20">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 text-4xl font-black text-white/30">
-                А
-              </div>
-            </div>
-            <span className="absolute bottom-4 left-4 rounded-full bg-black/50 px-3 py-1 text-xs text-gray-300 backdrop-blur">
-              [ФОТО АНАСТАСИИ]
-            </span>
+            <img
+              src="/anastasia.jpg"
+              alt="Анастасия Каушинская"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
           </div>
         </div>
 
