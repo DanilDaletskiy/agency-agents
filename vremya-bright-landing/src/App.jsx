@@ -3,7 +3,6 @@ import { useState } from 'react'
 const NAV_LINKS = [
   { href: '#audience', label: 'Для кого' },
   { href: '#offer', label: 'Оффер' },
-  { href: '#program', label: 'Программа' },
   { href: '#packages', label: 'Пакеты' },
   { href: '#about', label: 'О создателе' },
   { href: '#faq', label: 'FAQ' },
@@ -273,39 +272,6 @@ function Offer() {
   )
 }
 
-function ProgramFormat() {
-  const blocks = [
-    { title: 'Живое открытие', text: 'Яркий старт, который сразу собирает внимание 80–200 участников и задаёт темп на весь вечер.' },
-    { title: 'Интерактивная программа', text: 'Несколько сменяющих друг друга зон активности и конкурсов — без пауз и провисаний.' },
-    { title: 'Командная работа на сцене', text: 'Ведущий, аниматоры и техническая команда работают синхронно по единому сценарию.' },
-    { title: 'Эмоциональный финал', text: 'Кульминация мероприятия, которая формирует сарафанное радио и повторные заказы.' },
-  ]
-  return (
-    <section id="program" className="relative px-5 py-20 sm:px-8 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>Как устроена программа</SectionEyebrow>
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Не одно шоу, а целое живое событие на 4 часа</h2>
-          <p className="mt-4 text-gray-400">
-            Детское интерактивное мероприятие построено как единая программа с несколькими смысловыми блоками, а не
-            набор случайных активностей.
-          </p>
-        </div>
-
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {blocks.map((b, i) => (
-            <div key={b.title} className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <span className="text-3xl font-black text-white/10">{String(i + 1).padStart(2, '0')}</span>
-              <h3 className="mt-3 text-base font-bold text-white">{b.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-400">{b.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function CourseStructure() {
   const blocks = [
     {
@@ -474,7 +440,7 @@ function About() {
           <SectionEyebrow>О создателе</SectionEyebrow>
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">О создателе</h2>
           <p className="mt-4 max-w-xl text-gray-400">
-            Анастасия [ФАМИЛИЯ] — основатель бренда «ВремяБытьЯрче». За два десятилетия в event-индустрии
+            Анастасия Каушинская — основатель бренда «ВремяБытьЯрче». За два десятилетия в event-индустрии
             выстроила систему, которая позволяет партнёрам в любом городе повторить результат без долгих
             экспериментов.
           </p>
@@ -668,8 +634,6 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-1 text-xs text-gray-500 sm:items-end">
-          <span>Телефон: [ТЕКСТ]</span>
-          <span>Email: [ТЕКСТ]</span>
           <span>© {new Date().getFullYear()} «ВремяБытьЯрче». Все права защищены.</span>
         </div>
       </div>
@@ -685,7 +649,6 @@ export default function App() {
         <Hero />
         <Audience />
         <Offer />
-        <ProgramFormat />
         <CourseStructure />
         <Packages />
         <About />
