@@ -109,21 +109,20 @@ function Hero() {
         <SectionEyebrow>Курс для организаторов детских мероприятий</SectionEyebrow>
 
         <h1 className="text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Готовая система запуска яркого бизнеса
+          Готовая система запуска
           <br />
           <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
-            в городе за 10 дней
+            прибыльного бизнеса с вложениями 0 рублей
           </span>
         </h1>
 
         <p className="mx-auto mt-7 max-w-2xl text-xl font-extrabold text-white sm:text-2xl">
-          10 дней <span className="text-fuchsia-400">·</span> 1 000 000 ₽ чистой прибыли*{' '}
-          <span className="text-fuchsia-400">·</span> 0 вложений
+          За 10 дней мероприятий вы заработаете 1 миллион чистой прибыли
         </p>
 
         <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-gray-400">
           Методология, продажи и организация уже упакованы — вам не нужно ничего изобретать, просто взять готовую
-          систему и запустить бизнес в своём городе.
+          систему и запустить бизнес.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -137,8 +136,6 @@ function Hero() {
             Что входит в курс
           </a>
         </div>
-
-        <p className="mx-auto mt-10 max-w-lg text-xs text-gray-600">* в зависимости от численности населения города</p>
       </div>
     </section>
   )
@@ -147,16 +144,20 @@ function Hero() {
 function Audience() {
   const cards = [
     {
-      title: 'Опытные организаторы мероприятий, аниматоры и ведущие',
+      title: 'Опытный организатор мероприятий',
       text: 'Найдёте много нового: открытия и уникальные методики из реальной практики.',
     },
     {
-      title: 'Активный родитель, который хочет заниматься детскими мероприятиями в масштабе',
-      text: 'Получите новый навык и новый опыт в дополнение к уже имеющемуся.',
+      title: 'Аниматор, ведущий',
+      text: 'Опытные в выступлениях, но готовые выйти на новый уровень — организовывать и зарабатывать самостоятельно.',
     },
     {
-      title: 'Активный человек, который хочет попробовать себя в организации мероприятий с нуля',
-      text: 'Получите детальные инструкции, как всё делать самостоятельно — и продавать, и организовывать.',
+      title: 'Инициативный родитель',
+      text: 'Хочет попробовать себя в организации мероприятий, получить новые навыки и опыт, не имея опыта в ивент-сфере.',
+    },
+    {
+      title: 'Человек-зажигалочка',
+      text: 'Любой, кто хочет, чтобы дети в его городе тусили, танцевали и развивались — и зарабатывать на этом. Опыт в ивент-сфере не обязателен.',
     },
   ]
   return (
@@ -170,7 +171,7 @@ function Audience() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <div
               key={c.title}
@@ -189,11 +190,12 @@ function Audience() {
 
 function Offer() {
   const items = [
-    'Как начать бизнес с нуля вложений',
-    'Как продавать без вложений в рекламу',
-    'Полностью упакованный сценарий мероприятия, готовый к использованию',
-    'Чек-листы, шаблоны и полиграфия для каждого этапа подготовки',
-    'Обучение команды и доступ к сообществу выпускников курса',
+    'Узнаете, как запускать бизнес с вложениями 0 рублей',
+    'Приобретёте навык продаж по авторской методике',
+    'Получите все необходимые документы: чек-листы, пошаговые инструкции, сценарий, календарь',
+    'Мы предоставим макеты афиши, флаеров, билетов, финансовой модели',
+    'Познакомитесь с уникальной программой мероприятия, на которую клиенты возвращаются поколениями',
+    'Поделимся, как с одного мероприятия получать 200 новых контактов',
   ]
 
   const costItems = [
@@ -205,6 +207,7 @@ function Offer() {
     { label: 'Дизайн макета афиши', price: '25 000 ₽' },
     { label: 'Дизайн макета билета', price: '15 000 ₽' },
     { label: 'Полиграфия и печать материалов', price: '40 000 ₽' },
+    { label: 'Ошибки при продажах, проведении, тестировании рекламы, упущенная выгода', price: '1 160 000 ₽' },
   ]
 
   return (
@@ -213,7 +216,7 @@ function Offer() {
         <div className="text-center">
           <SectionEyebrow>Оффер по сути</SectionEyebrow>
           <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-            Вы получаете не курс видео, а готовый бизнес под запуск
+            Вы получаете 4-недельный практический курс запуска прибыльного бизнеса
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
             15 лет в бизнесе, 10 лет именно с этим форматом мероприятий — методология выстроена и проверена на
@@ -253,7 +256,7 @@ function Offer() {
                 ))}
                 <tr className="border-t border-white/10 bg-white/[0.04]">
                   <td className="px-5 py-4 font-bold text-white sm:px-6">Итого</td>
-                  <td className="px-5 py-4 text-right text-xl font-black text-white sm:px-6">≈ 800 000 ₽</td>
+                  <td className="px-5 py-4 text-right text-xl font-black text-white sm:px-6">1 960 000 ₽</td>
                 </tr>
                 <tr className="border-t border-fuchsia-500/30 bg-gradient-to-r from-fuchsia-500/10 to-violet-500/10">
                   <td className="px-5 py-4 font-bold text-white sm:px-6">Цена курса «ВремяБытьЯрче»</td>
@@ -309,24 +312,31 @@ function CourseStructure() {
       step: 'Блок 1',
       title: 'Подготовка',
       bullets: [
-        'Как искать спонсоров, чтобы снизить себестоимость мероприятия',
-        'Как договариваться с поставщиками по тактике win-win и снижать издержки',
+        'Вы получите пошаговый план, как подготовить все мероприятие без расходов',
+        'Вы рассчитаете финансовую модель с 40% маржинальностью',
+        'Вы узнаете как вести переговоры, чтобы получать лучшие условия при взаимовыгодном сотрудничестве',
+        'Мы вместе разработаем конкурентоспособную ценовую политику для вашей территории',
+        'А также поделимся, как ещё можно заработать сверхприбыль',
       ],
     },
     {
       step: 'Блок 2',
       title: 'Продажа',
       bullets: [
-        'Как начать продажи без стартовых вложений',
-        'Как договариваться со школами о продаже сразу 300–400 билетов за один разговор',
+        'Узнаете, как создавать календарь продаж и убрать риски не заполнения масштабного мероприятия и риски убытков',
+        'Получите список каналов продаж, которые не требуют финансовых вливаний',
+        'Мы поделимся уникальными скриптами продаж и вовлечения спонсоров на призы и подарки',
+        'Расскажем о системе бронирования, чтобы клиенты заранее приобретали билеты',
       ],
     },
     {
       step: 'Блок 3',
       title: 'Реализация',
       bullets: [
-        'Как получить дорогое шоу по цене, доступной для детского мероприятия',
-        'Как провести мероприятие по готовому сценарию силами своей команды',
+        'Расскажем, как за 10 мероприятий получить 2000 контактов клиентов в свою клиентскую базу',
+        'Получите полный сценарий с распределением ролей, а также список типичных ошибок, чтобы их не допускать',
+        'Узнаете как получить отзывы и сделать задел на следующее мероприятие',
+        'А также, как получить обратную связь, для развития своих мероприятий именно под вашу аудиторию',
       ],
     },
   ]
@@ -360,151 +370,50 @@ function CourseStructure() {
   )
 }
 
-function Results() {
-  const items = [
-    { title: 'Прибыль с первого мероприятия', text: 'Ощутимый доход уже с дебютного события — без месяцев раскачки.' },
-    { title: 'Готовый кейс для портфолио', text: 'Видео, фото и отзывы для продажи следующих мероприятий.' },
-    { title: 'Доверие родителей в городе', text: 'Узнаваемый бренд снимает вопрос «а кто вы такие» на первой встрече.' },
-    { title: 'База контактов', text: 'Родители, школы и сады, с которыми можно работать на постоянной основе.' },
-    { title: 'Право на доп. монетизацию', text: 'Абонементы, мерч и сопутствующие услуги поверх основного продукта.' },
-  ]
-  return (
-    <section className="relative px-5 py-20 sm:px-8 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>Что вы получаете в итоге</SectionEyebrow>
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Не разовое мероприятие, а актив для бизнеса</h2>
-        </div>
-
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {items.map((it, i) => (
-            <div key={it.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-fuchsia-500 to-violet-600 text-sm font-bold text-white">
-                {i + 1}
-              </span>
-              <h3 className="mt-4 text-sm font-bold text-white">{it.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-gray-400">{it.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function ChainNode({ children, strong, small }) {
-  const base = 'rounded-xl border px-4 py-3 text-center font-semibold'
-  if (strong) {
-    return (
-      <div className={`${base} border-fuchsia-500/50 bg-gradient-to-br from-fuchsia-500/15 to-violet-500/15 text-sm text-white sm:text-base`}>
-        {children}
-      </div>
-    )
-  }
-  if (small) {
-    return <div className={`${base} border-white/10 bg-white/[0.03] text-xs text-gray-300`}>{children}</div>
-  }
-  return <div className={`${base} border-white/10 bg-white/[0.03] text-sm text-gray-200`}>{children}</div>
-}
-
-function ChainArrow() {
-  return <div className="rotate-90 text-2xl leading-none text-fuchsia-400 lg:rotate-0">→</div>
-}
-
-function ContactsAsset() {
-  const occasions = ['День рождения', 'Корпоратив', 'Юбилей', 'Свадьба', 'Выпускной']
-  return (
-    <section className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
-      <Blob className="-left-24 top-0 h-80 w-80 bg-fuchsia-700/20" />
-      <div className="relative mx-auto max-w-5xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>База контактов как актив</SectionEyebrow>
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Это не разовое мероприятие, а актив для бизнеса</h2>
-          <p className="mt-4 text-gray-400">
-            После мероприятия вы получаете не только прибыль, а ещё около 2000 контактов родителей в базе. Каждый
-            контакт — это в среднем 4–5 поводов для повторного заказа в год.
-          </p>
-        </div>
-
-        <div className="mt-14 flex flex-col items-center gap-4 lg:flex-row lg:justify-center">
-          <ChainNode>Мероприятие</ChainNode>
-          <ChainArrow />
-          <ChainNode strong>≈ 2000 контактов родителей</ChainNode>
-          <ChainArrow />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-            {occasions.map((o) => (
-              <ChainNode key={o} small>
-                {o}
-              </ChainNode>
-            ))}
-          </div>
-        </div>
-
-        <div className="mx-auto mt-12 max-w-xl rounded-2xl border border-fuchsia-500/30 bg-gradient-to-br from-fuchsia-500/10 to-violet-500/10 p-6 text-center">
-          <p className="text-lg font-extrabold text-white sm:text-xl">
-            2000 контактов × 5 поводов = 10 000 потенциальных мероприятий каждый год
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function FeatureCell({ value }) {
-  if (value === true) return <span className="text-lg font-bold text-emerald-400">✓</span>
-  if (value === false) return <span className="text-gray-600">—</span>
-  return <span className="text-xs font-semibold text-white">{value}</span>
-}
-
 function Packages() {
   const packages = [
     {
       name: 'Сам себе организатор',
       price: '36 690 ₽',
-      desc: '4 недели, 3 блока курса — всё в видеоформате, вы сами записываете и применяете.',
       items: [
-        '4 недели, 3 блока курса',
-        'Доступ к материалам — 1 месяц после прохождения',
-        'Доступ к телеграм-каналу',
-        'Без скриптов продаж и маркетинговых шаблонов',
+        '4 недели доступа к курсу',
+        'Готовые чек-листы',
+        'Готовые шаблоны',
+        'Макеты полиграфии (афиша, билет, флаер)',
+        'Финансовая модель',
+        'Доступ к материалам после окончания: 1 месяц',
       ],
     },
     {
-      name: 'Вместе весело шагать',
+      name: 'Вместе веселей',
       price: '44 847 ₽',
-      desc: 'Знания из курса плюс сопровождение на этапе подготовки к первому мероприятию.',
       items: [
-        'Всё из пакета «Сам себе организатор»',
-        'Материалы и разборы на практике: готовые скрипты и шаблоны',
-        'Обратная связь по домашним заданиям',
-        'Куратор на этапе продаж и подготовки к первому мероприятию',
+        '4 недели доступа к курсу',
+        'Готовые чек-листы',
+        'Готовые шаблоны',
+        'Макеты полиграфии (афиша, билет, флаер)',
+        'Финансовая модель',
+        'Доступ к материалам после окончания: 2 месяца',
+        'Обратная связь от куратора',
+        '2 онлайн-эфира «Вопрос — Ответ» (посередине курса и по окончании)',
       ],
-      highlight: true,
     },
     {
-      name: 'Мы сила',
+      name: 'Плечом к плечу',
       price: '199 999 ₽',
-      desc: 'Полное сопровождение запуска с куратором на протяжении полугода.',
       items: [
-        'Всё из пакета «Вместе весело шагать»',
-        '6 месяцев сопровождения',
-        'Приоритетная поддержка куратора',
-        'Всего 4 места в потоке',
+        '4 недели доступа к курсу',
+        'Готовые чек-листы',
+        'Готовые шаблоны',
+        'Макеты полиграфии (афиша, билет, флаер)',
+        'Финансовая модель',
+        'Доступ к материалам после окончания: 6 месяцев',
+        'Обратная связь от куратора',
+        '2 онлайн-эфира «Вопрос — Ответ» (посередине курса и по окончании)',
+        'Полное сопровождение до результата',
+        'Возможность присутствия на эталонном мероприятии во Владивостоке с разбором на месте проведения',
       ],
-      scarce: true,
     },
-  ]
-
-  const featureRows = [
-    { label: 'Доступ к материалам курса', values: ['1 месяц после курса', '1 месяц после курса', '6 месяцев'] },
-    { label: '3 блока курса в видеоформате', values: [true, true, true] },
-    { label: 'Доступ к телеграм-каналу', values: [true, true, true] },
-    { label: 'Готовые скрипты продаж и шаблоны', values: [false, true, true] },
-    { label: 'Разбор домашних заданий', values: [false, true, true] },
-    { label: 'Куратор на этапе продаж и подготовки', values: [false, true, true] },
-    { label: 'Сопровождение до первого мероприятия', values: [false, true, true] },
-    { label: 'Расширенное сопровождение', values: [false, false, '6 месяцев'] },
-    { label: 'Ограничение по местам', values: [false, false, 'Всего 4 места'] },
   ]
 
   return (
@@ -517,29 +426,8 @@ function Packages() {
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {packages.map((p) => (
-            <div
-              key={p.name}
-              className={`flex flex-col rounded-2xl border p-8 ${
-                p.highlight
-                  ? 'border-fuchsia-500/50 bg-gradient-to-b from-fuchsia-500/10 to-violet-500/5 lg:-translate-y-3'
-                  : p.scarce
-                    ? 'border-amber-500/40 bg-gradient-to-b from-amber-500/5 to-transparent'
-                    : 'border-white/10 bg-white/[0.03]'
-              }`}
-            >
-              {p.highlight && (
-                <span className="mb-4 inline-block w-fit rounded-full bg-gradient-to-r from-fuchsia-500 to-violet-600 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
-                  Популярный выбор
-                </span>
-              )}
-              {p.scarce && (
-                <span className="mb-4 inline-block w-fit rounded-full border border-amber-500/40 bg-amber-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-300">
-                  Всего 4 места
-                </span>
-              )}
+            <div key={p.name} className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8">
               <h3 className="text-xl font-extrabold text-white">«{p.name}»</h3>
-              <div className="mt-2 text-3xl font-black text-white">{p.price}</div>
-              <p className="mt-3 text-sm text-gray-400">{p.desc}</p>
 
               <ul className="mt-6 flex-1 space-y-3">
                 {p.items.map((it) => (
@@ -550,43 +438,13 @@ function Packages() {
                 ))}
               </ul>
 
-              <GradientButton as="a" href="#cta" className="mt-8 w-full">
+              <div className="mt-6 text-3xl font-black text-white">{p.price}</div>
+
+              <GradientButton as="a" href="#cta" className="mt-6 w-full">
                 Выбрать «{p.name}»
               </GradientButton>
             </div>
           ))}
-        </div>
-
-        <div className="mt-14 overflow-x-auto rounded-2xl border border-white/10">
-          <table className="w-full min-w-[640px] border-collapse text-left text-sm">
-            <thead>
-              <tr className="bg-white/[0.03] text-xs uppercase tracking-wider text-gray-500">
-                <th className="px-5 py-4 font-semibold sm:px-6">Что входит</th>
-                {packages.map((p) => (
-                  <th
-                    key={p.name}
-                    className={`px-5 py-4 text-center font-semibold sm:px-6 ${
-                      p.highlight ? 'bg-gradient-to-b from-fuchsia-500/10 to-violet-500/10 text-white' : 'text-gray-300'
-                    }`}
-                  >
-                    «{p.name}»
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {featureRows.map((row) => (
-                <tr key={row.label} className="border-t border-white/10">
-                  <td className="px-5 py-4 text-gray-300 sm:px-6">{row.label}</td>
-                  {row.values.map((v, i) => (
-                    <td key={i} className="px-5 py-4 text-center sm:px-6">
-                      <FeatureCell value={v} />
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </section>
@@ -619,6 +477,10 @@ function About() {
             Анастасия [ФАМИЛИЯ] — основатель бренда «ВремяБытьЯрче». За два десятилетия в event-индустрии
             выстроила систему, которая позволяет партнёрам в любом городе повторить результат без долгих
             экспериментов.
+          </p>
+
+          <p className="mt-3 max-w-xl font-semibold text-white">
+            15 лет в организации мероприятий и 10 лет создания авторского формата детских праздников.
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -825,8 +687,6 @@ export default function App() {
         <Offer />
         <ProgramFormat />
         <CourseStructure />
-        <Results />
-        <ContactsAsset />
         <Packages />
         <About />
         <FAQ />
