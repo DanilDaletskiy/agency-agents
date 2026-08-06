@@ -201,7 +201,6 @@ function Offer() {
     { label: 'Дизайн макета афиши', price: '25 000 ₽' },
     { label: 'Дизайн макета билета', price: '15 000 ₽' },
     { label: 'Полиграфия и печать материалов', price: '40 000 ₽' },
-    { label: 'Ошибки при продажах, проведении, тестировании рекламы, упущенная выгода', price: '1 160 000 ₽' },
   ]
 
   return (
@@ -250,7 +249,21 @@ function Offer() {
                 ))}
                 <tr className="border-t border-white/10 bg-white/[0.04]">
                   <td className="px-5 py-4 font-bold text-white sm:px-6">Итого</td>
-                  <td className="px-5 py-4 text-right text-xl font-black text-white sm:px-6">1 960 000 ₽</td>
+                  <td className="px-5 py-4 text-right text-xl font-black text-white sm:px-6">≈ 800 000 ₽</td>
+                </tr>
+                <tr>
+                  <td colSpan={2} className="px-5 py-3 sm:px-6">
+                    <div className="overflow-hidden rounded-xl border border-white/40">
+                      <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm text-gray-300">
+                        <span>Ошибки при продажах, проведении, тестировании рекламы, упущенная выгода</span>
+                        <span className="text-gray-400">1 160 000 ₽</span>
+                      </div>
+                      <div className="flex items-center justify-between gap-4 border-t border-white/40 px-4 py-3">
+                        <span className="font-bold uppercase text-white">Точное итого</span>
+                        <span className="text-xl font-black text-white">1 960 000 ₽ или</span>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
                 <tr className="border-t border-fuchsia-500/30 bg-gradient-to-r from-fuchsia-500/10 to-violet-500/10">
                   <td className="px-5 py-4 font-bold text-white sm:px-6">Цена курса «ВремяБытьЯрче»</td>
