@@ -426,7 +426,6 @@ function Packages() {
 }
 
 function About() {
-  const bullets = ['20 лет на рынке детских мероприятий', '5000+ проведённых мероприятий', '300 000+ детей — участников программ']
   return (
     <section id="about" className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
       <Blob className="-left-24 top-1/2 h-80 w-80 -translate-y-1/2 bg-fuchsia-700/20" />
@@ -444,23 +443,17 @@ function About() {
         <div>
           <SectionEyebrow>О создателе</SectionEyebrow>
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">О создателе</h2>
+          <p className="mt-4 max-w-xl font-semibold text-white">
+            Анастасия Каушинская — создатель методики, педагог-психолог по образованию.
+          </p>
+
           <p className="mt-4 max-w-xl text-gray-400">
-            Анастасия Каушинская — основатель бренда «ВремяБытьЯрче». За два десятилетия в event-индустрии
-            выстроила систему, которая позволяет партнёрам в любом городе повторить результат без долгих
-            экспериментов.
+            Ещё с 2011 года я делала разные мероприятия для детей. В 2015 году родители попросили сделать дискотеку
+            для подростков. Год спустя, в 2016 году, она выросла в комплексное масштабное мероприятие. С тех пор мы
+            не останавливаемся: более 10 лет непрерывной доработки превратили его в выверенную
+            развлекательно-развивающую четырёхчасовую программу. Каждый отклик родителей был поводом для улучшения —
+            поэтому семьи возвращаются к нам снова и снова, и это видно в каждой детали программы.
           </p>
-
-          <p className="mt-3 max-w-xl font-semibold text-white">
-            15 лет в организации мероприятий и 10 лет создания авторского формата детских праздников.
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {bullets.map((b) => (
-              <div key={b} className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm font-semibold text-white">
-                {b}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
