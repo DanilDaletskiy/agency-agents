@@ -125,12 +125,21 @@
   }
 
   .subtitle{
-    font-size:0.8rem;
-    letter-spacing:0.16em;
+    font-size:1.05rem;
+    line-height:1.35;
+    letter-spacing:0.06em;
     text-transform:uppercase;
-    color:rgba(255,255,255,0.55);
-    margin-top:-14px;
-    font-weight:700;
+    color:var(--white);
+    text-shadow:0 0 16px rgba(255,45,149,0.7);
+    margin-top:-10px;
+    font-weight:800;
+  }
+
+  .price-next{
+    font-size:1.05rem;
+    font-weight:800;
+    color:var(--cyan);
+    text-shadow:0 0 14px rgba(51,230,255,0.6);
   }
 
   /* --- price card --- */
@@ -284,7 +293,7 @@
 
 <main>
   <img class="logo" src="assets/logo.png" alt="Время быть ярче">
-  <div class="subtitle">вечеринка</div>
+  <div class="subtitle">Новогодние вечеринки для 3-4 и 5-7 классов</div>
 
   <section class="price-card">
     <div class="price-label" id="priceLabel">Актуальная цена билета</div>
@@ -292,7 +301,7 @@
     <div class="price-note" id="priceNote"></div>
 
     <div class="countdown-wrap" id="countdownWrap" hidden>
-      <div class="countdown-cta">Успей забронировать по специальной цене!</div>
+      <div class="countdown-cta">ДЕЙСТВИТЕЛЬНА ДО 30 СЕНТЯБРЯ</div>
       <div class="countdown">
         <div class="unit">
           <span class="num" id="cdDays">00</span>
@@ -307,6 +316,7 @@
           <span class="unit-label">минут</span>
         </div>
       </div>
+      <div class="price-next">С 1 октября цена 2900</div>
     </div>
   </section>
 
@@ -365,12 +375,12 @@
 
     if (now < OCT_1) {
       // до 30 сентября включительно (или некорректная/более ранняя дата)
-      price = 2800;
-      note = "Специальная цена — успей забронировать до 30 сентября!";
+      price = 2500;
+      note = "Стоимость для групп от 15 детей";
       notePlain = false;
       showCountdown = true;
     } else if (now < NOV_1) {
-      price = 3300;
+      price = 2900;
       note = "Актуальная цена";
       notePlain = true;
       showCountdown = false;
