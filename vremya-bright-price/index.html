@@ -301,7 +301,7 @@
     <div class="price-note" id="priceNote"></div>
 
     <div class="countdown-wrap" id="countdownWrap" hidden>
-      <div class="countdown-cta">ДЕЙСТВИТЕЛЬНА ДО 30 СЕНТЯБРЯ</div>
+      <div class="countdown-cta">ДЕЙСТВИТЕЛЬНА ДО 15 ОКТЯБРЯ</div>
       <div class="countdown">
         <div class="unit">
           <span class="num" id="cdDays">00</span>
@@ -316,7 +316,7 @@
           <span class="unit-label">минут</span>
         </div>
       </div>
-      <div class="price-next">с 1 октября цена 2900</div>
+      <div class="price-next">с 16 октября цена 2900</div>
     </div>
   </section>
 
@@ -337,7 +337,7 @@
   document.getElementById('waBtn').href = "https://wa.me/" + WHATSAPP_PHONE;
 
   // === Границы периодов (локальное время устройства) ===
-  var OCT_1   = new Date(2026, 9, 1, 0, 0, 0, 0);   // 1 октября 2026, 00:00
+  var OCT_16  = new Date(2026, 9, 16, 0, 0, 0, 0);  // 16 октября 2026, 00:00 (конец акции 15 октября)
   var NOV_1   = new Date(2026, 10, 1, 0, 0, 0, 0);  // 1 ноября 2026, 00:00
   var DEC_1   = new Date(2026, 11, 1, 0, 0, 0, 0);  // 1 декабря 2026, 00:00
 
@@ -373,8 +373,8 @@
 
     var price, note, notePlain, showCountdown;
 
-    if (now < OCT_1) {
-      // до 30 сентября включительно (или некорректная/более ранняя дата)
+    if (now < OCT_16) {
+      // до 15 октября включительно (или некорректная/более ранняя дата)
       price = 2500;
       note = "Стоимость для групп от 15 детей";
       notePlain = false;
@@ -406,7 +406,7 @@
 
     if (showCountdown) {
       cdWrap.hidden = false;
-      var diff = OCT_1.getTime() - now.getTime();
+      var diff = OCT_16.getTime() - now.getTime();
       if (diff < 0) diff = 0;
 
       var totalMinutes = Math.floor(diff / 60000);
