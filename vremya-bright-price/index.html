@@ -338,8 +338,7 @@
 
   // === Границы периодов (локальное время устройства) ===
   var OCT_16  = new Date(2026, 9, 16, 0, 0, 0, 0);  // 16 октября 2026, 00:00 (конец акции 15 октября)
-  var NOV_1   = new Date(2026, 10, 1, 0, 0, 0, 0);  // 1 ноября 2026, 00:00
-  var DEC_1   = new Date(2026, 11, 1, 0, 0, 0, 0);  // 1 декабря 2026, 00:00
+  var DEC_2   = new Date(2026, 11, 2, 0, 0, 0, 0);  // 2 декабря 2026, 00:00 (конец цены 2900 — 1 декабря включительно)
 
   function getNow(){
     // Тестовая подмена даты: ?test=2026-11-15T12:00:00
@@ -379,13 +378,8 @@
       note = "Стоимость для групп от 15 детей";
       notePlain = false;
       showCountdown = true;
-    } else if (now < NOV_1) {
+    } else if (now < DEC_2) {
       price = 2900;
-      note = "Актуальная цена";
-      notePlain = true;
-      showCountdown = false;
-    } else if (now < DEC_1) {
-      price = 3900;
       note = "Актуальная цена";
       notePlain = true;
       showCountdown = false;
